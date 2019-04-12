@@ -1,4 +1,5 @@
 # Vuejs源码阅读
+```shell
 |-- Vuejs
   |-- .circleci
   |-- .github
@@ -25,6 +26,7 @@
   |-- BACKERS
   |-- LICENSE
   |-- package
+  ```
 
 
 
