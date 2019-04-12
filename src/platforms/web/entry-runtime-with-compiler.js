@@ -1,13 +1,27 @@
 /* @flow */
-
+// Vue入口文件
 import config from 'core/config'
-import { warn, cached } from 'core/util/index'
-import { mark, measure } from 'core/util/perf'
+import {
+  warn,
+  cached
+} from 'core/util/index'
+import {
+  mark,
+  measure
+} from 'core/util/perf'
 
+// 引入Vue
 import Vue from './runtime/index'
-import { query } from './util/index'
-import { compileToFunctions } from './compiler/index'
-import { shouldDecodeNewlines, shouldDecodeNewlinesForHref } from './util/compat'
+import {
+  query
+} from './util/index'
+import {
+  compileToFunctions
+} from './compiler/index'
+import {
+  shouldDecodeNewlines,
+  shouldDecodeNewlinesForHref
+} from './util/compat'
 
 const idToTemplate = cached(id => {
   const el = query(id)
@@ -16,8 +30,8 @@ const idToTemplate = cached(id => {
 
 const mount = Vue.prototype.$mount
 Vue.prototype.$mount = function (
-  el?: string | Element,
-  hydrating?: boolean
+  el ?: string | Element,
+  hydrating ?: boolean
 ): Component {
   el = el && query(el)
 
@@ -62,7 +76,10 @@ Vue.prototype.$mount = function (
         mark('compile')
       }
 
-      const { render, staticRenderFns } = compileToFunctions(template, {
+      const {
+        render,
+        staticRenderFns
+      } = compileToFunctions(template, {
         outputSourceRange: process.env.NODE_ENV !== 'production',
         shouldDecodeNewlines,
         shouldDecodeNewlinesForHref,
@@ -86,7 +103,7 @@ Vue.prototype.$mount = function (
  * Get outerHTML of elements, taking care
  * of SVG elements in IE as well.
  */
-function getOuterHTML (el: Element): string {
+function getOuterHTML(el: Element): string {
   if (el.outerHTML) {
     return el.outerHTML
   } else {

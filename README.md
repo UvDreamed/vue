@@ -2,13 +2,13 @@
 ```shell
 ├── Vuejs
   ├── .circleci
-  ├──  .github
-  ├──  benchmarks
+  ├── .github
+  ├── benchmarks
   ├── dist
-  ├──  examples
+  ├── examples
   ├── flow
   ├── packages
-  ├── script
+  ├── script        //构建配置
   ├── src
     ├── compiler    //编译相关,包含所有编译相关的代码,包括把模板解析成ast语法树,ast语法树优化,代码生成等功能,编译的工作可以再构建时做(借助webpack,vue-loader等辅助插件),也可以在运行时做,使用包含构建功能的Vue.js
     ├── core        //核心代码,包括内置组件,全局API封装,Vue实例化,观察者,虚拟DOM,工具函数等等
